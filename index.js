@@ -1,15 +1,17 @@
 import express from "express";
 import mongoose from "mongoose";
 import dotenv from "dotenv"
-import jobRoutes from "./routes/jobs.js";
-import authRoutes from "./routes/auth.js";
+import cors from "cors";
+import jobRoutes from "./routes/Jobs.js";
+import authRoutes from "./routes/Auth.js";
 
 const app = express();
 dotenv.config();
 
 app.use(
     express.json(),
-    express.urlencoded({ extended: true }),
+    cors(),
+    express.static("./Client")
 );
 
 app.use("/api/jobs", jobRoutes)
@@ -19,5 +21,4 @@ mongoose.connect(process.env.MONGO_URL, {
     useNewUrlParser: true,
     useUnifiedTopology: true
 })
-    .then(() => app.listen(4000))
-    .catch(err => console.log(err));
+    .then(() => app.listen(process.env.PORT || 4000))

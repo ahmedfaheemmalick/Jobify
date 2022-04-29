@@ -1,4 +1,4 @@
-const getJobs = (req, res) => {
+const getJobs = (_req, res) => {
     try {
         res.status(200).json("all jobs")
     } catch (error) {
@@ -6,7 +6,7 @@ const getJobs = (req, res) => {
     }
 }
 
-const getJob = (req, res) => {
+const getJob = (_req, res) => {
     try {
         res.status(200).json("one job")
     } catch (error) {
@@ -14,7 +14,7 @@ const getJob = (req, res) => {
     }
 }
 
-const createJob = (req, res) => {
+const createJob = (_req, res) => {
     try {
         res.status(200).json("create job")
     } catch (error) {
@@ -22,7 +22,7 @@ const createJob = (req, res) => {
     }
 }
 
-const updateJob = (req, res) => {
+const updateJob = (_req, res) => {
     try {
         res.status(200).json("update job")
     } catch (error) {
@@ -30,7 +30,7 @@ const updateJob = (req, res) => {
     }
 }
 
-const deleteJob = (req, res) => {
+const deleteJob = (_req, res) => {
     try {
         res.status(200).json("delete job")
     } catch (error) {
